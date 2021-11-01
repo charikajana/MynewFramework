@@ -15,6 +15,7 @@ public class WebDriverUtils {
 		  WebDriver driver = new ChromeDriver(); 
 		  driver.manage().window().maximize();
 		  driver.get("http://www.testyou.in/Login.aspx");
+		  //this is my new automation project
 		 
 	}
 	
