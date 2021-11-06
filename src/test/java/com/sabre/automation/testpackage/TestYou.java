@@ -7,6 +7,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import com.sabre.atuomation.webdriverutils.ByUitls;
+import com.sabre.atuomation.webdriverutils.PropertyUitls;
 import com.sabre.atuomation.webdriverutils.WebDriverUtils;
 
 public class TestYou {
@@ -15,6 +17,12 @@ public class TestYou {
 		TestYou testyou=new TestYou();
 		testyou.mesecond();
 		
+		
+		
+
+		PropertyUitls.getdesiredproperty("com.sabre.atuomation.CreateAccountPage.Name");
+		
+		
 
 	}
 	
@@ -22,13 +30,17 @@ public class TestYou {
 	public void mesecond() {
 		WebDriverUtils webdriverutils=new WebDriverUtils();
 		webdriverutils.MyOwn_getpageTitel();
+		
+		
 	}
 	
 	public void myfirst() {
 		WebDriverUtils webdriverutils=new WebDriverUtils();
 		webdriverutils.launchURL("http://www.testyou.in/Login.aspx");
-		WebElement wbelement=webdriverutils.MyOwn_FindElement_method(By.xpath("login"));
-		List<WebElement> webElements=webdriverutils.MyOwn_FindElements_mehotd(By.xpath("login"));
+		//WebElement wbelement=webdriverutils.MyOwn_FindElement_method(By.id("com.sabre.atuomation.CreateAccountPage.Name"));
+		//WebElement wbelement=webdriverutils.MyOwn_FindElement_method(ByUitls.getByObject("com.sabre.atuomation.CreateAccountPage.Name"));
+		WebElement wbelement=webdriverutils.MyOwn_FindElement_method("com.sabre.atuomation.CreateAccountPage.Name");
+		List<WebElement> webElements=webdriverutils.MyOwn_FindElements_mehotd(By.xpath("com.sabre.atuomation.LoginPage.Name"));
 		int k=webElements.size();
 		for(int i=0;i<k;i++) {
 			WebElement wb=webElements.get(i);
@@ -73,19 +85,19 @@ public class TestYou {
 		}
 		
 		//select 
-		webdriverutils.MyOwn_SelectByVisibleText(By.xpath("login"), "6");
-		webdriverutils.MyOwn_SelectByIndex(By.xpath("login"), 6);
-		webdriverutils.MyOwn_SelectByValue(By.xpath("login"), "4");
+		webdriverutils.MyOwn_SelectByVisibleText("com.sabre.atuomation.ForgetpasswordPage.Name", "6");
+		webdriverutils.MyOwn_SelectByIndex("com.sabre.atuomation.CreateAccountPage.Login", 6);
+		webdriverutils.MyOwn_SelectByValue("com.sabre.atuomation.CreateAccountPage.Login", "4");
 		
 		
 		//click
-		webdriverutils.MyOwn_Click(By.xpath("login"));
+		webdriverutils.MyOwn_Click("com.sabre.atuomation.CreateAccountPage.Login");
 		
 		//sendKeys
-		webdriverutils.MyOwn_SendKeys(By.xpath("login"), "Sirisha");
+		webdriverutils.MyOwn_SendKeys("com.sabre.atuomation.CreateAccountPage.Login", "Sirisha");
 		
 		//is Enabled
-		boolean flag=webdriverutils.MyOwn_isEnabled(By.xpath("login"));
+		boolean flag=webdriverutils.MyOwn_isEnabled("com.sabre.atuomation.CreateAccountPage.Login");
 		if(flag) {
 			System.out.println("Test Case Pass");
 		}else {
@@ -93,7 +105,7 @@ public class TestYou {
 		}
 		
 		
-		boolean flag1=webdriverutils.MyOwn_isSelected(By.xpath("login"));
+		boolean flag1=webdriverutils.MyOwn_isSelected("com.sabre.atuomation.CreateAccountPage.Login");
 		if(flag1) {
 			System.out.println("Test Case Pass");
 		}else {

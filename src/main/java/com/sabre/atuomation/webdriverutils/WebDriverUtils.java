@@ -23,19 +23,21 @@ public class WebDriverUtils {
 		driver.get(URL);
 	}
 
-	public WebElement MyOwn_FindElement_method(By by) {
+	public WebElement MyOwn_FindElement_method(String Keyvalue) {
+		By by=ByUitls.getByObject(Keyvalue);
+		//by= By.id("sdjfjsdfsklfj");
 		WebElement wbelement = getcurrentdriver().findElement(by);
 		return wbelement;
 	}
 	
-	public void MyOwn_Click(By by) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public void MyOwn_Click(String Keyvalue) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		wb.click();		
-		//MyOwn_FindElement_method(by).click();		
+
 	}
 	
-	public void MyOwn_SendKeys(By by,String value) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public void MyOwn_SendKeys(String Keyvalue,String value) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		wb.sendKeys(value);
 	}
 
@@ -63,31 +65,31 @@ public class WebDriverUtils {
 		return pagesource;
 	}
 	
-	public void MyOwn_SelectByVisibleText(By by,String visibletext) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public void MyOwn_SelectByVisibleText(String Keyvalue,String visibletext) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		Select sel=new Select(wb);
 		sel.selectByVisibleText(visibletext);		
 	}
-	public void MyOwn_SelectByIndex(By by,int Indexnumber) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public void MyOwn_SelectByIndex(String Keyvalue,int Indexnumber) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		Select sel=new Select(wb);
 		sel.selectByIndex(Indexnumber);	
 	}
 	
-	public void MyOwn_SelectByValue(By by,String value) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public void MyOwn_SelectByValue(String Keyvalue,String value) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		Select sel=new Select(wb);
 		sel.selectByValue(value);
 	}
 	
-	public boolean MyOwn_isEnabled(By by) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public boolean MyOwn_isEnabled(String Keyvalue) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		boolean flag=wb.isEnabled();
 		return flag;
 	}
 	
-	public boolean MyOwn_isSelected(By by) {
-		WebElement wb=MyOwn_FindElement_method(by);
+	public boolean MyOwn_isSelected(String Keyvalue) {
+		WebElement wb=MyOwn_FindElement_method(Keyvalue);
 		boolean flag=wb.isSelected();
 		return flag;
 	}
