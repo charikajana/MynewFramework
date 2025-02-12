@@ -93,7 +93,9 @@ public class WebDriverUtils {
 		boolean flag=wb.isSelected();
 		return flag;
 	}
-	
+       public void method()	
+            {System.out.println("KK");
+        }
 	
 	
 	
