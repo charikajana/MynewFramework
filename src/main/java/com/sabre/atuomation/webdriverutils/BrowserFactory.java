@@ -130,5 +130,13 @@ public class BrowserFactory {
 
 		return driver;
 	}
+	public WebDriver setFirefoxBrowser() {
+		System.setProperty("webdriver.firefox.driver",
+				System.getProperty("user.dir") + "\\src\\main\\resources\\drivers\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+
+		return driver;
+	}
 
 }
